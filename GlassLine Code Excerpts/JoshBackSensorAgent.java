@@ -227,10 +227,6 @@ public class JoshBackSensorAgent extends Agent implements ConveyorFamily, JoshFr
 		conveyor = c;
 	}
 
-
-
-
-
 }
 
 

@@ -89,7 +89,6 @@ public class JoshInlineMachineAgent extends Agent implements ConveyorFamily{
 	//Scheduler///////////////////////////////////////////////////////////////////////////////////////////////////////////
 	
 	public boolean pickAndExecuteAnAction() {
-//		if(!isACorner){
 			
 			if(	machineState == MachineState.EMPTY && glassPanes.isEmpty() && machineIsEmpty){
 				if(!backSensor.sensorPressed){
@@ -123,41 +122,6 @@ public class JoshInlineMachineAgent extends Agent implements ConveyorFamily{
 				machineState = MachineState.EMPTY;
 				return true;
 			}
-//		}
-//		
-//		else{
-//			if(	machineState == MachineState.EMPTY && glassPanes.isEmpty() && passingGlass){
-//				if(/*!backSensor.sensorPressed &&*/ !backSensor.conveyor.frontSensor.sensorPressed){
-//					checkFrontSensor();
-//					System.out.println(name + " sent I am available");
-//					machineState = MachineState.DONOTHING;
-//				}
-//				else{
-//						frontSensor.msgIAmNotAvailable();
-//				}
-//				return true;
-//			}
-//			
-//			if(machineState == MachineState.LOADING && passingGlass){
-//				passGlass();
-//				ReleaseGlass();
-//				machineState = MachineState.EMPTY;
-//				
-//				return true;
-//			}
-//			if(machineState == MachineState.EMPTY && !backSensor.sensorPressed){
-//				checkFrontSensor();
-//				machineState = MachineState.UNLOADING;
-//				return true;
-//			}
-//			
-//			if(machineState == MachineState.UNLOADING && passingGlass){
-//				passGlass();
-//				machineState = MachineState.EMPTY;
-//				return true;
-//			}
-			
-//		}
 		
 		return false;
 

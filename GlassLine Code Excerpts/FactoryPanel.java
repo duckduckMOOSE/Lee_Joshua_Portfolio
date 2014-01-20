@@ -110,10 +110,6 @@ public class FactoryPanel extends JPanel
 	/**
 	 * Feel free to use this method to start all the Agent threads at the same time
 	 */
-	//HEY!!! THIS IS WHERE YOU INSTANTIATE ALL OF YOUR BACKEND AGENTS.
-	//NEVER FORGET ABOUT THIS PLACE.
-	//I'M GONNA ADD MORE TEXT TO MAKE THIS SPOT REALLY OBVIOUS.
-	//MEARGH!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!1!!!!!!!
 	private void initializeBackEnd()
 	{
 
@@ -151,20 +147,6 @@ public class FactoryPanel extends JPanel
 		inlineAgents[1] = breakoutAgent;
 		inlineAgents[2] = manualBreakoutAgent;
 		
-		//test run
-//		AlexConveyorAgent conveyor8=new AlexConveyorAgent("Conveyor8",transducer,8);
-//		AlexConveyorAgent conveyor9=new AlexConveyorAgent("Conveyor9",transducer,9);
-//		AlexConveyorAgent conveyor10=new AlexConveyorAgent("Conveyor10",transducer,10);
-//		AlexConveyorAgent conveyor11=new AlexConveyorAgent("Conveyor11",transducer,11);
-//		AlexConveyorAgent conveyor12=new AlexConveyorAgent("Conveyor12",transducer,12);
-//		AlexConveyorAgent conveyor13=new AlexConveyorAgent("Conveyor13",transducer,13);
-//		AlexConveyorAgent conveyor14=new AlexConveyorAgent("Conveyor14",transducer,14);
-//
-//		AlexInlineMachineAgent washerAgent=new AlexInlineMachineAgent("Washer",transducer,3);
-//		AlexInlineMachineAgent painterAgent=new AlexInlineMachineAgent("Painter",transducer,4);
-//		AlexInlineMachineAgent uvLampAgent=new AlexInlineMachineAgent("Uv_Lamp",transducer,5);
-//		AlexInlineMachineAgent ovenAgent=new AlexInlineMachineAgent("Oven",transducer,6);
-//////		
 		truckAgent=new TruckAgent(transducer,"Truck");
 
 		//Initializing Sky's PopUps 0 - 2
@@ -207,7 +189,7 @@ public class FactoryPanel extends JPanel
 		SkySensorAgent sensor14 = new SkySensorAgent(Position.First, 14, "Sensor14", transducer);
 		SkySensorAgent sensor15 = new SkySensorAgent(Position.Second, 15, "Sensor15", transducer);
 
-		//TODO: Josh initializations
+		// Josh initializations
 		sensor16 = new JoshBackSensorAgent("sensor16", 16, transducer);
 		sensor17 = new JoshFrontSensorAgent("sensor17", 17, transducer);
 		sensor18 = new JoshBackSensorAgent("sensor18", 18, transducer);
@@ -246,8 +228,6 @@ public class FactoryPanel extends JPanel
 		inlineAgents[4] = painter;
 		inlineAgents[5] = uvLamp;
 		inlineAgents[6] = oven;
-		
-		//TODO:Sky made this hack for his linking, can be deleted later
 
 
 		// **************Link the agents *****************
@@ -266,10 +246,7 @@ public class FactoryPanel extends JPanel
 		conveyor3.setPreAgent(breakoutAgent);
 		conveyor3.setNextAgent(manualBreakoutAgent);
 		conveyor4.setPreAgent(manualBreakoutAgent);
-		conveyor4.setNextAgent(conveyor5);
-		
-		
-//		
+		conveyor4.setNextAgent(conveyor5);		
 
 		cutterAgent.setPreConveyor(conveyor0);
 		cutterAgent.setNextConveyor(conveyor1);
@@ -278,33 +255,6 @@ public class FactoryPanel extends JPanel
 		manualBreakoutAgent.setPreConveyor(conveyor3);
 		manualBreakoutAgent.setNextConveyor(conveyor4);
 		
-		//test run
-//		conveyor8.setPreAgent(popUp2);
-//		conveyor8.setNextAgent(washerAgent);
-//		conveyor9.setPreAgent(washerAgent);
-//		conveyor9.setNextAgent(conveyor10);
-//		conveyor10.setPreAgent(conveyor9);
-//		conveyor10.setNextAgent(painterAgent);
-//		conveyor11.setPreAgent(painterAgent);
-//		conveyor11.setNextAgent(uvLampAgent);
-//		conveyor12.setPreAgent(uvLampAgent);
-//		conveyor12.setNextAgent(conveyor13);
-//		conveyor13.setPreAgent(conveyor12);
-//		conveyor13.setNextAgent(ovenAgent);
-//		conveyor14.setPreAgent(ovenAgent);
-//		conveyor14.setNextAgent(truckAgent);
-//		
-//		washerAgent.setPreConveyor(conveyor8);
-//		washerAgent.setNextConveyor(conveyor9);
-//		painterAgent.setPreConveyor(conveyor10);
-//		painterAgent.setNextConveyor(conveyor11);
-//		uvLampAgent.setPreConveyor(conveyor11);
-//		uvLampAgent.setNextConveyor(conveyor12);
-//		ovenAgent.setPreConveyor(conveyor13);
-//		ovenAgent.setNextConveyor(conveyor14);
-//		
-		
-
 		// Linking - Sky
 		conveyor5.connectAgents(conveyor4, popUp0);
 		conveyor6.connectAgents(popUp0, popUp1);
@@ -400,22 +350,6 @@ public class FactoryPanel extends JPanel
 		cutterAgent.startThread();
 		breakoutAgent.startThread();
 		manualBreakoutAgent.startThread();
-		
-		//test run
-//		conveyor8.startThread();
-//		conveyor9.startThread();
-//		conveyor10.startThread();
-//		conveyor11.startThread();
-//		conveyor12.startThread();
-//		conveyor13.startThread();
-//		conveyor14.startThread();
-//		
-//		washerAgent.startThread();
-//		uvLampAgent.startThread();
-//		painterAgent.startThread();
-//		ovenAgent.startThread();
-//		
-		
 
 		//Sky start threads
 		conveyor5.startThread();
@@ -441,8 +375,7 @@ public class FactoryPanel extends JPanel
 		sensor13.startThread();
 		sensor14.startThread();
 		sensor15.startThread();
-		 
-		//TODO:
+
 ////		Josh start threads
 		sensor16.startThread();
 		sensor17.startThread();

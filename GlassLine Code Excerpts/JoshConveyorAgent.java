@@ -94,21 +94,6 @@ public class JoshConveyorAgent extends Agent implements ConveyorFamily, JoshConv
 			return true;
 		}
 		
-		/////////////////////NEW STUFF////////////////////////////////////
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		////////////////////////////////////////////////////////////////////
-		
 		return false;
 	}
 
